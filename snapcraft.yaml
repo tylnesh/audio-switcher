@@ -1,0 +1,22 @@
+name: audio-switcher
+version: 0.2.0
+summary: Script for switching between audio sinks.
+description: |
+  Just an ultra-simple bash script to switch between currently plugged audio sinks
+grade: stable
+confinement: devmode
+base: core18
+
+parts:
+  audio-switcher:
+    plugin: dump
+    source: https://github.com/tylnesh/audio-switcher.git
+    stage-packages: 
+       - pulseaudio
+       - libnotify-bin
+
+apps:
+  audio-switcher:
+    command: audio-switcher.sh
+    plugs: 
+      - pulseaudio
