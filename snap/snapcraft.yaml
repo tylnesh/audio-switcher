@@ -18,6 +18,6 @@ parts:
        
 apps:
   audio-switcher:
-    command: ./exports.sh ./audio-switcher.sh
+    command: audio-switcher.sh
     plugs:
       - pulseaudio
