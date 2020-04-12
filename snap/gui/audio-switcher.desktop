@@ -5,6 +5,6 @@ GenericName=Audio Switcher
 Comment=Switches audio output between HDMI and aux
 Exec=audio-switcher
 Icon=${SNAP}/meta/gui/audio-switcher.svg
-Terminal=true
+Terminal=false
 Type=Application
 Keywords=Audio;Switcher;
