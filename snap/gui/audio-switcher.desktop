@@ -1,5 +1,5 @@
 [Desktop Entry]
-Version=1.0
+Version=0.1
 Name=Audio Switcher Script
 GenericName=Audio Switcher
 Comment=Switches audio output between HDMI and aux
@@ -8,3 +8,6 @@ Icon=${SNAP}/meta/gui/audio-switcher.svg
 Terminal=false
 Type=Application
 Keywords=Audio;Switcher;
+Actions=OutputSink, InputSink, OutputCard, InputCard
+
+[Desktop Action OutputSink]
