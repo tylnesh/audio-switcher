@@ -20,6 +20,5 @@ apps:
   audio-switcher:
     command: audio-switcher.sh
     plugs:
-      - pulseaudio
       - network
-      - x11
+      - desktop      

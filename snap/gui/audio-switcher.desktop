@@ -10,4 +10,4 @@ Type=Application
 Keywords=Audio;Switcher;
 Actions=OutputSink, InputSink, OutputCard, InputCard
 
-[Desktop Action OutputSink]
+#[Desktop Action OutputSink]
