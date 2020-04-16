@@ -22,6 +22,6 @@ apps:
     plugs:
       - network 
       - audio-playback
-      #- audio-record
+      - audio-record
       - desktop      
       - x11
