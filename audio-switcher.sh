@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ "$SNAP_ARCH" == "amd64" ]; then
+if [[ "$SNAP_ARCH" == "amd64" ]]; then
   ARCH="x86_64-linux-gnu"
-elif [ "$SNAP_ARCH" == "armhf" ]; then
+elif [[ "$SNAP_ARCH" == "armhf" ]]; then
   ARCH="arm-linux-gnueabihf"
-elif [ "$SNAP_ARCH" == "arm64" ]; then
+elif [[ "$SNAP_ARCH" == "arm64" ]]; then
   ARCH="aarch64-linux-gnu"
 else
   ARCH="$SNAP_ARCH-linux-gnu"
@@ -20,12 +20,12 @@ RUNNING_SINK=(`pactl list sinks short | grep RUNNING | awk '{print $1}'`)
 INPUTS=(`pactl list sink-inputs short | awk '{print $1}'`) 
 
 for i in ${!SINKS[*]}; do
-	if ((${SINKS[$i]} == $RUNNING_SINK)); then
+	if [[ ${SINKS[$i]} == $RUNNING_SINK ]]; then
 		SINK_INDEX=$i
 	fi
 done
 
-if ((${SINKS[-1]} ==  $RUNNING_SINK)); then	
+if [[ ${#SINKS[@]} -ne 0 ]] && [[ ${SINKS[-1]} -eq $RUNNING_SINK ]]; then	
 	pactl set-default-sink ${SINKS[0]}
 	for i in ${INPUTS[*]}; do 
 		pactl move-sink-input $i ${SINKS[0]}
@@ -40,7 +40,6 @@ else
 	done
 	notify-send "Switching to `pactl list sinks short | grep RUNNING | awk  '{print $2}' | awk -F "." '{print $NF}'`"
 fi
-	
 
 
  
