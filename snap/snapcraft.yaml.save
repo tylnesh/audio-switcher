@@ -12,7 +12,7 @@ parts:
     # See 'snapcraft plugins'
     plugin: dump
     source: https://github.com/tylnesh/audio-switcher.git
-    stage-packages: 
+      stage-packages: 
        - pulseaudio
        - libnotify-bin
        
@@ -21,7 +21,6 @@ apps:
     command: audio-switcher.sh
     plugs:
       - network 
-      - audio-playback
-      #- audio-record
+      - pulseaudio
       - desktop      
-      - x11
+    
